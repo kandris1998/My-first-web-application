@@ -1,17 +1,56 @@
 
+body {
+    /*position: absolute;
+    top: 150px;
+    right: 1200px;*/
+    background-color:lightgrey;
+}
 
 .photoviewer {
     width: 2200px;
+    height: 1500px;
     border: black solid thin;
-    height: min-content;
-    padding: 0px;
     display: flex;
     justify-content: center;
-   /* align-items: center;*/
+    align-items: center;
+    background-color: white;
 }
 
 .photo{
     width: 2000px;
     height: auto;
     margin: 0px;
+    border: black solid thin;
+    position: relative;
+    top: 130px;
+
+}
+
+.text-box {
+    position: relative;
+    bottom: 135px;
+    height: 250px;
+    background: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0.8;
+    border: black solid thin;
+    font-size: 30px;
+
+}
+
+button {
+    width: 100%;
+    background-color: white;
+    border: black solid thin;
+    cursor: pointer;
+}
+
+.arrow {
+width: 60px;
+}
+
+#right {
+    transform: rotate(0.5turn) ;
 }
