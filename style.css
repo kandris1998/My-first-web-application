@@ -55,3 +55,19 @@ width: 60px;
 #right {
     transform: rotate(0.5turn) ;
 }
+
+.thumbnail-container {
+    display: flex;
+    align-items: center;
+}
+
+.box {
+   /*display: inline-flexbox;
+    align-items: center;*/
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border: black solid thin;
+}
+
+

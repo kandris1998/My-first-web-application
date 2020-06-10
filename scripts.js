@@ -51,12 +51,14 @@ $('#left').click(() => {
     loadPhoto(currentPhoto);
 }); 
 
+//Day 4 Part 1
 
-//egyéb
+imagesData.forEach((photo) => {
+    $('.thumbnail-container').append(`<img class="box" src="${imagesData}>`);
+$
+});
 
-/*$(document).ready(function(){
-    $("button").click(function(){
-        // Change src attribute of image
-        $(this).attr("src", "/images/photo2.jpg");
-    });    
-}); */
+/* imagesData.forEach ((phot) => { 
+    $('.thumbnail-container').append(
+       `<img class="box" src='${imagesData.photo}'>`); 
+    });*/
