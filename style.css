@@ -1,0 +1,17 @@
+
+
+.photoviewer {
+    width: 2200px;
+    border: black solid thin;
+    height: min-content;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+   /* align-items: center;*/
+}
+
+.photo{
+    width: 2000px;
+    height: auto;
+    margin: 0px;
+}
