@@ -8,7 +8,8 @@ body {
 
 .photoviewer {
     width: 2200px;
-    height: 1500px;
+    height: max-content;
+    /*height: 1500px;*/
     border: black solid thin;
     display: flex;
     justify-content: center;
