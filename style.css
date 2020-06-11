@@ -1,13 +1,13 @@
 
 body {
-    /*position: absolute;
+    position: absolute;
     top: 150px;
-    right: 1200px;*/
+    left: 500px;
     background-color:lightgrey;
 }
 
 .photo-viewer {
-    width: 2200px;
+    width: auto;
     height: max-content;
     /*height: 1500px;*/
     border: black solid thin;
@@ -17,29 +17,46 @@ body {
     background-color: white;
 }
 
+.photo-container{
+    width: auto;
+    max-height: 225px;
+    height: fit-content;
+    border: black solid thin;
+    padding: none;
+    display: flex;
+    /*justify-content: center;*/
+
+}
+
 .photo{
-    width: 2000px;
+    width: 300px;
     height: auto;
     margin: 0px;
     border: black solid thin;
-    position: relative;
-    top: 130px;
+   /* position: relative;
+    top: 0px;*/
+    /*display: flex;
+    justify-content: center;*/
 
 }
 
 .text-box {
     position: relative;
-    bottom: 135px;
-    height: 250px;
+    right: 270px;
+    top:55px;
+    height: 60px;
     background: black;
     color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
     opacity: 0.8;
     border: black solid thin;
-    font-size: 30px;
-
-}
+    font-size: 8px;
+    margin: 0px;
+    /*font-size: 30px;*/
+    /*padding-right: 20px;*/
+    /*height: 250px;*/    
+    /*width: 95%;*/
+    }
 
 button {
     width: 100%;
@@ -49,7 +66,7 @@ button {
 }
 
 .arrow {
-width: 60px;
+width: 10px;
 }
 
 #right {
@@ -65,12 +82,24 @@ width: 60px;
   /*  display: flex;
     align-items: center;*/
     position: relative;
-    left: 600px;
-    width: 150px;
-    height: 150px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
     margin: 10px;
   /*  border: black solid thin;*/
 }
 
 
-
+.title {
+    display: none;
+    position: relative;
+    background: grey;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    top: -50px;
+  }
+  
+  /*.thumbnail-container:hover.title  {
+    display: block;
+  }*/

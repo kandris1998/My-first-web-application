@@ -29,24 +29,29 @@ let imagesData = {
 
 //Day 3 Part 1
 
+let boxID = 0; //változás1
+
 let loadPhoto = (photoNumber) => {
     $('#photo1').attr("src", imagesData.photo[photoNumber]);
     $('h1#photo-title').text(imagesData.title[photoNumber]);
     $('p#description').text(imagesData.description[photoNumber]);
-    $(`#0`).css("border", "solid thin red");
+    $(`.box#${boxID}`).css("border", "solid thin red");
 
 };
 
 //cél: kattintásra mindig az adott kis fotó körvonala változzon
 //jelenleg: kattintásra az összes box piros lesz
- 
+//hogy kéne jól behivatkozni, hogy minden kattintásra változzon?
+
+
 
 loadPhoto(currentPhoto); 
 
 $('#right').click(() => {
     if(currentPhoto < 5 ) {
         currentPhoto++;
-    }
+        boxID++; //változás 2
+    };
     $('#clicked').text(imagesData.title[currentPhoto])
     loadPhoto(currentPhoto);
 }); 
@@ -54,16 +59,17 @@ $('#right').click(() => {
 $('#left').click(() => {
        if (currentPhoto >= 0){
         currentPhoto--;
-    }
+        boxID--; //változás 3
+    };
     $('#clicked').text(imagesData.title[currentPhoto])
     loadPhoto(currentPhoto);
 }); 
 
 //Day 4 Part 1
 
-
 imagesData.photo.forEach((item, index) => {
-  $('.thumbnail-container').append(`<img src="${item}"class="box" id="${index}" data-index="${index}">`);
+  $('.thumbnail-container').append(`<img src="${item}" class="box" id="${boxID}" data-index="${index}">`); //változás 4
+  $('.thumbnail-container').append(`<div class="title">${imagesData.title[index]}</div>`) //hoverhez
   $('.box').click((event) => {
     let indexClicked = $(event.target).attr('data-index');
     let numberIndex = parseInt(indexClicked);
@@ -75,6 +81,9 @@ imagesData.photo.forEach((item, index) => {
 });
 });
 
+/*$(".box").select(function() {
+$(".box").css("border", "solid thin red");
+});*/
 
 
 
