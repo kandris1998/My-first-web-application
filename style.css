@@ -6,7 +6,7 @@ body {
     background-color:lightgrey;
 }
 
-.photoviewer {
+.photo-viewer {
     width: 2200px;
     height: max-content;
     /*height: 1500px;*/
@@ -62,12 +62,15 @@ width: 60px;
 }
 
 .box {
-   /*display: inline-flexbox;
+  /*  display: flex;
     align-items: center;*/
+    position: relative;
+    left: 600px;
     width: 150px;
     height: 150px;
     margin: 10px;
-    border: black solid thin;
+  /*  border: black solid thin;*/
 }
+
 
 

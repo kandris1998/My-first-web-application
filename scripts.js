@@ -23,9 +23,9 @@ let imagesData = {
 };
 
 
-$('#photo1').attr("src", imagesData.photo[currentPhoto]);
-$('h1#photo-title').text(imagesData.title[currentPhoto]);
-$('p#description').text(imagesData.description[currentPhoto]);
+//$('#photo1').attr("src", imagesData.photo[currentPhoto]);
+//$('h1#photo-title').text(imagesData.title[currentPhoto]);
+//$('p#description').text(imagesData.description[currentPhoto]);
 
 //Day 3 Part 1
 
@@ -53,20 +53,18 @@ $('#left').click(() => {
 
 //Day 4 Part 1
 
-//let data = ["first", "second", "third"];
 
 imagesData.photo.forEach((item, index) => {
   $('.thumbnail-container').append(`<img src="${item}"class="box" data-index="${index}">`);
   $('.box').click((event) => {
     let indexClicked = $(event.target).attr('data-index');
-    // indexClicked is now a string! if you need it as a number you have to change it
-    // because for example "1" + 1 is going to be "11" and not 2
     let numberIndex = parseInt(indexClicked);
     // now numberIndex is a number
     $('#clicked').text(imagesData.title[indexClicked])
-
-   // $('#clicked').text(ImagesData.title[indexClicked]);
-  });
+    $('#photo1').attr("src", imagesData.photo[indexClicked]);
+    $('h1#photo-title').text(imagesData.title[indexClicked]);
+    $('p#description').text(imagesData.description[indexClicked]);
+});
 });
 
 
