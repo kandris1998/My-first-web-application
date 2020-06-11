@@ -53,12 +53,23 @@ $('#left').click(() => {
 
 //Day 4 Part 1
 
-imagesData.forEach((photo) => {
-    $('.thumbnail-container').append(`<img class="box" src="${imagesData}>`);
-$
+//let data = ["first", "second", "third"];
+
+imagesData.photo.forEach((item, index) => {
+  $('.thumbnail-container').append(`<img src="${item}"class="box" data-index="${index}">`);
+  $('.box').click((event) => {
+    let indexClicked = $(event.target).attr('data-index');
+    // indexClicked is now a string! if you need it as a number you have to change it
+    // because for example "1" + 1 is going to be "11" and not 2
+    let numberIndex = parseInt(indexClicked);
+    // now numberIndex is a number
+    $('#clicked').text(imagesData.title[indexClicked])
+
+   // $('#clicked').text(ImagesData.title[indexClicked]);
+  });
 });
 
-/* imagesData.forEach ((phot) => { 
-    $('.thumbnail-container').append(
-       `<img class="box" src='${imagesData.photo}'>`); 
-    });*/
+
+
+
+
