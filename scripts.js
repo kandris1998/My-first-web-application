@@ -33,7 +33,13 @@ let loadPhoto = (photoNumber) => {
     $('#photo1').attr("src", imagesData.photo[photoNumber]);
     $('h1#photo-title').text(imagesData.title[photoNumber]);
     $('p#description').text(imagesData.description[photoNumber]);
+    $(`#0`).css("border", "solid thin red");
+
 };
+
+//cél: kattintásra mindig az adott kis fotó körvonala változzon
+//jelenleg: kattintásra az összes box piros lesz
+ 
 
 loadPhoto(currentPhoto); 
 
@@ -41,13 +47,15 @@ $('#right').click(() => {
     if(currentPhoto < 5 ) {
         currentPhoto++;
     }
+    $('#clicked').text(imagesData.title[currentPhoto])
     loadPhoto(currentPhoto);
 }); 
-
+ 
 $('#left').click(() => {
-    if (currentPhoto >= 0){
+       if (currentPhoto >= 0){
         currentPhoto--;
     }
+    $('#clicked').text(imagesData.title[currentPhoto])
     loadPhoto(currentPhoto);
 }); 
 
@@ -55,7 +63,7 @@ $('#left').click(() => {
 
 
 imagesData.photo.forEach((item, index) => {
-  $('.thumbnail-container').append(`<img src="${item}"class="box" data-index="${index}">`);
+  $('.thumbnail-container').append(`<img src="${item}"class="box" id="${index}" data-index="${index}">`);
   $('.box').click((event) => {
     let indexClicked = $(event.target).attr('data-index');
     let numberIndex = parseInt(indexClicked);
