@@ -10,7 +10,7 @@ body {
     width: auto;
     height: max-content;
     /*height: 1500px;*/
-    border: black solid thin;
+  /*  border: black solid thin;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,21 +18,23 @@ body {
 }
 
 .photo-container{
-    width: auto;
+    width: 300px;
     max-height: 225px;
     height: fit-content;
-    border: black solid thin;
+   /* border: black solid thin;*/
     padding: none;
+    margin: none;
     display: flex;
+   /*flex-shrink: 0;*/
     /*justify-content: center;*/
-
 }
 
 .photo{
     width: 300px;
     height: auto;
     margin: 0px;
-    border: black solid thin;
+   /* border: black solid thin;*/
+    flex-shrink: 0;
    /* position: relative;
     top: 0px;*/
     /*display: flex;
@@ -41,27 +43,28 @@ body {
 }
 
 .text-box {
-    position: relative;
-    right: 270px;
-    top:55px;
+    position: absolute;
+    right: 25px;
+    bottom: 153px;   
     height: 60px;
     background: black;
     color: white;
     padding-left: 10px;
+    padding-right: 10px;
     opacity: 0.8;
-    border: black solid thin;
+   /* border: black solid thin;*/
     font-size: 8px;
     margin: 0px;
     /*font-size: 30px;*/
     /*padding-right: 20px;*/
     /*height: 250px;*/    
-    /*width: 95%;*/
+    width: 280px;
     }
 
 button {
     width: 100%;
     background-color: white;
-    border: black solid thin;
+    border: none;
     cursor: pointer;
 }
 
