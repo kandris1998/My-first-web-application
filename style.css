@@ -44,7 +44,7 @@ body {
 
 .text-box {
     position: absolute;
-    right: 26px;
+    right: 25px;
     bottom: 143px;   
     height: 60px;
     background: black;
@@ -93,16 +93,21 @@ width: 10px;
 }
 
 
-.title {
+.thumbnail-container .title {
     display: none;
     position: relative;
     background: grey;
     color: white;
     border-radius: 5px;
     padding: 5px;
-    top: -50px;
+    margin: none;
+    font-size: 10px;
+    top: 40px;
+    right: 25px;
+    /*flex-shrink: 0;*/
   }
-  
-  /*.thumbnail-container:hover.title  {
+  /*
+.thumbnail-container:hover .title{   
     display: block;
-  }*/
+  }
+*/
