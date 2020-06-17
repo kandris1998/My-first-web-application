@@ -19,7 +19,7 @@ let currentPhoto = 0 ;
 let imagesData = {
     photo: ["images/photo1.jpg","images/photo2.jpg", "images/photo3.jpg","images/photo4.jpg","images/photo5.jpg"],
     title: ["Róma", "Valagszaggató", "Tesákkal", "Corsica", "Kis Frenki"],
-    description: ["description1", "description2", "description 3", "description 4", "description 5"]
+    description: ["2019 októbere, 3 napos Római utazás.", "2016 novemberi szalagavató avagy valagszaggató a családdal.", "2017 júliusa családi nyaralás Corsicán, épp a véreimmel pózolok.", "2017-es utolsó hivatalos össznépi nyaralás a családdal.", "Amikor még kis Frenki igazi húsos cica volt, és a kedvenc párnáján heverészett."]
 };
 
 
@@ -35,13 +35,8 @@ let loadPhoto = (photoNumber) => {
     $('#photo1').attr("src", imagesData.photo[photoNumber]);
     $('h1#photo-title').text(imagesData.title[photoNumber]);
     $('p#description').text(imagesData.description[photoNumber]);
-    $(`.box#${boxID}`).css("border", "solid thin red");
+    $(`.box#${boxID}`).css("border", "solid 3px gold");
 };
-
-//cél: kattintásra mindig az adott kis fotó körvonala változzon
-//jelenleg: kattintásra egyesével kiszínezi
-//hogy kéne jól behivatkozni, hogy minden kattintásra csak az adott változzon? 
-
 
 
 loadPhoto(boxID); 
@@ -67,9 +62,13 @@ $('#left').click(() => {
 //Day 4 Part 1
 
 imagesData.photo.forEach((item, index) => {
-  $('.thumbnail-container').append(`<img src="${item}" class="box" id="${index}" data-index="${index}">`); 
-  $('.thumbnail-container').append(`<div class="title">${imagesData.title[index]}</div>`) //hoverhez
-  $(`.box#${boxID}`).css("border", "solid thin red");
+  $('#thumbnail-body').append(`
+	<div class="thumbnail-container">
+  		<img src="${item}" class="box" id="${index}" data-index="${index}">
+		<div class="title">${imagesData.title[index]}</div>
+	</div>`); 
+ // $('.thumbnail-container').append(`<div class="title">${imagesData.title[index]}</div>`) //hoverhez
+  $(`.box#${boxID}`).css("border", "solid 3px gold");
 
 
   $('.box').click((event) => {
@@ -78,17 +77,14 @@ imagesData.photo.forEach((item, index) => {
 	let numberIndex = parseInt(indexClicked);
 	boxID = indexClicked;
 	// now numberIndex is a number
-	$(`.box#${boxID}`).css("border", "solid thin red");
-    $('#clicked').text(imagesData.title[indexClicked])
+	$(`.box#${boxID}`).css("border", "solid 3px gold");
+   // $('#clicked').text(imagesData.title[indexClicked])
     $('#photo1').attr("src", imagesData.photo[indexClicked]);
     $('h1#photo-title').text(imagesData.title[indexClicked]);
     $('p#description').text(imagesData.description[indexClicked]);
 });
 });
 
-/*$(".box").select(function() {
-$(".box").css("border", "solid thin red");
-});*/
 
 
 
