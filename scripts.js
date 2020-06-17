@@ -36,7 +36,6 @@ let loadPhoto = (photoNumber) => {
     $('h1#photo-title').text(imagesData.title[photoNumber]);
     $('p#description').text(imagesData.description[photoNumber]);
     $(`.box#${boxID}`).css("border", "solid thin red");
-
 };
 
 //cél: kattintásra mindig az adott kis fotó körvonala változzon
@@ -45,35 +44,41 @@ let loadPhoto = (photoNumber) => {
 
 
 
-loadPhoto(currentPhoto); 
+loadPhoto(boxID); 
 
 $('#right').click(() => {
-    if(currentPhoto < 5 ) {
-        currentPhoto++;
-        boxID++; //változás 2
-    };
-    $('#clicked').text(imagesData.title[currentPhoto])
-    loadPhoto(currentPhoto);
+    if (boxID < 4 ) {
+       	$(`.box#${boxID}`).css("border", "none");
+		boxID++; 
+	};
+    $('#clicked').text(imagesData.title[boxID])
+    loadPhoto(boxID);
 }); 
  
 $('#left').click(() => {
-       if (currentPhoto >= 0){
-        currentPhoto--;
-        boxID--; //változás 3
-    };
-    $('#clicked').text(imagesData.title[currentPhoto])
-    loadPhoto(currentPhoto);
+       if (boxID > 0){
+        $(`.box#${boxID}`).css("border", "none");
+		boxID--; 
+	};
+    $('#clicked').text(imagesData.title[boxID])
+    loadPhoto(boxID);
 }); 
 
 //Day 4 Part 1
 
 imagesData.photo.forEach((item, index) => {
-  $('.thumbnail-container').append(`<img src="${item}" class="box" id="${index}" data-index="${index}">`); //változás 4
+  $('.thumbnail-container').append(`<img src="${item}" class="box" id="${index}" data-index="${index}">`); 
   $('.thumbnail-container').append(`<div class="title">${imagesData.title[index]}</div>`) //hoverhez
+  $(`.box#${boxID}`).css("border", "solid thin red");
+
+
   $('.box').click((event) => {
+	$(`.box#${boxID}`).css("border", "none");
     let indexClicked = $(event.target).attr('data-index');
-    let numberIndex = parseInt(indexClicked);
-    // now numberIndex is a number
+	let numberIndex = parseInt(indexClicked);
+	boxID = indexClicked;
+	// now numberIndex is a number
+	$(`.box#${boxID}`).css("border", "solid thin red");
     $('#clicked').text(imagesData.title[indexClicked])
     $('#photo1').attr("src", imagesData.photo[indexClicked]);
     $('h1#photo-title').text(imagesData.title[indexClicked]);
